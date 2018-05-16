@@ -54,4 +54,46 @@ document.addEventListener("DOMContentLoaded", function() {
 
   })
 
+  // Step 8
+
+  var button3 = document.getElementById('button3')
+
+  button3.addEventListener('click', function() {
+    $.ajax({
+
+      url: 'http://first-ajax-api.herokuapp.com/time',
+      method: 'GET',
+      data: {America: 'Mexico_City'},
+      dataType: 'text'
+
+    }).done(function(data) {
+
+      console.log(data);
+
+    })
+  })
+
+  // Step 9
+
+  var button4 = document.getElementById('button4')
+
+  button4.addEventListener('click', function() {
+    $.ajax({
+
+      url: 'http://first-ajax-api.herokuapp.com/a_car',
+      method: 'GET',
+      dataType: 'html'
+
+    }).done(function(data) {
+
+      var ul = document.createElement('ul')
+      var element = document.querySelector('#step9')
+
+      ul.append(data)
+      
+
+    })
+  })
+
+
 });
